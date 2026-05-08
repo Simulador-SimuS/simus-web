@@ -8,7 +8,7 @@ Simulador do Processador Sapiens
 
 ------------------------------------------------------------------------
 
-1. Introdução {#1-introdução}
+1. Introdução
 -------------
 
 O SimuS (Simulador Sapiens) é uma ferramenta educacional desenvolvida
@@ -23,19 +23,19 @@ entrada/saída simuladas.
 
 ------------------------------------------------------------------------
 
-2. Interface do Usuário {#2-interface-do-usuário}
+2. Interface do Usuário
 -----------------------
 
 A interface do SimuS está dividida em três painéis principais, cada um
 com funções específicas para facilitar o desenvolvimento e depuração de
 programas.
 
-### 2.1. Painel Esquerdo - Editor e Execução {#21-painel-esquerdo---editor-e-execução}
+### 2.1. Painel Esquerdo - Editor e Execução 
 
 Este painel contém três abas que permitem editar código, visualizar
 erros e acompanhar a execução:
 
-#### 2.1.1. Aba Editor {#211-aba-editor}
+#### 2.1.1. Aba Editor
 
 Área de edição de código assembly com as seguintes características:
 
@@ -44,7 +44,7 @@ erros e acompanhar a execução:
 -   Fonte monoespaçada (Consolas) para melhor alinhamento do código
 -   Suporte a comentários (linhas iniciadas com ponto e vírgula ;)
 
-#### 2.1.2. Aba Erros {#212-aba-erros}
+#### 2.1.2. Aba Erros
 
 Exibe mensagens de erro geradas durante a compilação:
 
@@ -54,7 +54,7 @@ Exibe mensagens de erro geradas durante a compilação:
     no editor
 -   Badge vermelho no título da aba indica o número de erros encontrados
 
-#### 2.1.3. Aba Execução {#213-aba-execução}
+#### 2.1.3. Aba Execução
 
 Visualização do código compilado com recursos de depuração:
 
@@ -66,12 +66,12 @@ Visualização do código compilado com recursos de depuração:
     em vermelho no endereço)
 -   Rolagem automática para acompanhar a execução do programa
 
-### 2.2. Painel Central - CPU e Controles {#22-painel-central---cpu-e-controles}
+### 2.2. Painel Central - CPU e Controles 
 
 Este painel concentra todos os controles de execução e visualização do
 estado da CPU:
 
-#### 2.2.1. Botões de Controle {#221-botões-de-controle}
+#### 2.2.1. Botões de Controle 
 
 Cinco botões com cores distintas para controlar a execução:
 
@@ -89,13 +89,13 @@ Cinco botões com cores distintas para controlar a execução:
     HLT. Restaura PC, registradores e portas de I/O, mas preserva o
     conteúdo da memória.
 
-#### 2.2.2. Barra de Status {#222-barra-de-status}
+#### 2.2.2. Barra de Status 
 
 Exibe o estado atual do simulador em texto cinza, abaixo dos botões de
 controle. Mensagens incluem: *"Pronto"*, *"Executando..."*, *"TURBO -
 Executando..."*, *"HALT - Programa Finalizado"*, entre outras.
 
-#### 2.2.3. Registradores {#223-registradores}
+#### 2.2.3. Registradores 
 
 Três caixas exibindo os valores dos registradores principais em
 hexadecimal:
@@ -107,14 +107,13 @@ hexadecimal:
 -   **SP (Stack Pointer):** Registrador de 16 bits que aponta para o
     topo da pilha (formato: XXXX, inicializado em FFFF)
 
-#### 2.2.4. Instrução Atual {#224-instrução-atual}
+#### 2.2.4. Instrução Atual 
 
 Caixa com fundo escuro exibindo o mnemônico da instrução atualmente
-apontada pelo PC. Exemplo: `LDA #FF`{.language-plaintext
-.highlighter-rouge}. Esta visualização em destaque amarelo-dourado
+apontada pelo PC. Exemplo: `LDA #FF`. Esta visualização em destaque amarelo-dourado
 facilita o acompanhamento da execução.
 
-#### 2.2.5. Flags (Sinalizadores) {#225-flags-sinalizadores}
+#### 2.2.5. Flags (Sinalizadores) 
 
 Três indicadores visuais que mostram o estado dos flags do processador:
 
@@ -125,7 +124,7 @@ Três indicadores visuais que mostram o estado dos flags do processador:
 -   **C (Carry):** Acende em azul quando há overflow/carry na última
     operação aritmética
 
-#### 2.2.6. Portas de Entrada/Saída {#226-portas-de-entradasaída}
+#### 2.2.6. Portas de Entrada/Saída 
 
 Interface simulada de periféricos com quatro componentes:
 
@@ -142,11 +141,11 @@ Interface simulada de periféricos com quatro componentes:
     digitado e confirmado na entrada, disponível para leitura via IN 1
     (porta de status).
 
-### 2.3. Painel Direito - Visualização da Memória {#23-painel-direito---visualização-da-memória}
+### 2.3. Painel Direito - Visualização da Memória
 
 Exibe o conteúdo da memória RAM em formato hexadecimal com navegação:
 
-#### 2.3.1. Barra de Navegação {#231-barra-de-navegação}
+#### 2.3.1. Barra de Navegação 
 
 Controles no topo do painel de memória:
 
@@ -170,7 +169,7 @@ Controles no topo do painel de memória:
         Stack Pointer, centralizando a visualização na pilha do
         programa.
 
-#### 2.3.2. Grade de Memória {#232-grade-de-memória}
+#### 2.3.2. Grade de Memória
 
 Visualização em grade hexadecimal com as seguintes características:
 
@@ -186,7 +185,7 @@ Visualização em grade hexadecimal com as seguintes características:
 
 ------------------------------------------------------------------------
 
-3. Barra de Ferramentas de Arquivo {#3-barra-de-ferramentas-de-arquivo}
+3. Barra de Ferramentas de Arquivo 
 ----------------------------------
 
 Localizada no topo do painel esquerdo, oferece três botões para
@@ -206,7 +205,7 @@ gerenciamento de arquivos:
 
 ------------------------------------------------------------------------
 
-4. Fluxo de Trabalho Típico {#4-fluxo-de-trabalho-típico}
+4. Fluxo de Trabalho Típico 
 ---------------------------
 
 Siga estes passos para desenvolver e executar programas no SimuS:
@@ -244,117 +243,109 @@ Siga estes passos para desenvolver e executar programas no SimuS:
 
 ------------------------------------------------------------------------
 
-5. Conjunto de Instruções Sapiens {#5-conjunto-de-instruções-sapiens}
+5. Conjunto de Instruções Sapiens 
 ---------------------------------
 
 O processador Sapiens implementa as seguintes categorias de instruções:
 
-### 5.1. Instruções de Transferência de Dados {#51-instruções-de-transferência-de-dados}
+### 5.1. Instruções de Transferência de Dados 
 
-  Mnemônico   Nome                  Descrição
-  ----------- --------------------- ---------------------------------------------
-  LDA         Load Accumulator      Carrega AC com valor da memória ou imediato
-  STA         Store Accumulator     Armazena AC na memória
-  LDS         Load Stack Pointer    Carrega SP com valor de 16 bits
-  STS         Store Stack Pointer   Armazena SP na memória (16 bits)
+| Mnemônico | Nome                 | Descrição                                             |
+|-----------|----------------------|-------------------------------------------------------|
+| LDA       | Load Accumulator     | Carrega AC com valor da memória ou imediato           |
+| STA       | Store Accumulator    | Armazena AC na memória                                |
+| LDS       | Load Stack Pointer   | Carrega SP com valor de 16 bits                       |
+| STS       | Store Stack Pointer  | Armazena SP na memória (16 bits)                      |
 
-### 5.2. Instruções Aritméticas {#52-instruções-aritméticas}
+### 5.2. Instruções Aritméticas 
 
-  Mnemônico   Nome                  Descrição
-  ----------- --------------------- -----------------------------------------
-  ADD         Addition              AC = AC + operando (atualiza flags)
-  ADC         Add with Carry        AC = AC + operando + C (atualiza flags)
-  SUB         Subtraction           AC = AC - operando (atualiza flags)
-  SBC         Subtract with Carry   AC = AC - operando - C (atualiza flags)
+| Mnemônico | Nome                | Descrição                                        |
+|-----------|---------------------|--------------------------------------------------|
+| ADD       | Addition            | AC = AC + operando (atualiza flags)              |
+| ADC       | Add with Carry      | AC = AC + operando + C (atualiza flags)          |
+| SUB       | Subtraction         | AC = AC - operando (atualiza flags)              |
+| SBC       | Subtract with Carry | AC = AC - operando - C (atualiza flags)          |
 
-### 5.3. Instruções Lógicas {#53-instruções-lógicas}
+### 5.3. Instruções Lógicas
 
-  Mnemônico   Nome           Descrição
-  ----------- -------------- --------------------------------------
-  AND         Logical AND    AC = AC & operando (atualiza flags)
-  OR          Logical OR     AC = AC \| operando (atualiza flags)
-  XOR         Exclusive OR   AC = AC \^ operando (atualiza flags)
-  NOT         Logical NOT    AC = \~AC (atualiza flags)
+| Mnemônico | Nome         | Descrição                                   |
+|-----------|--------------|---------------------------------------------|
+| AND       | Logical AND  | AC = AC & operando (atualiza flags)         |
+| OR        | Logical OR   | AC = AC \| operando (atualiza flags)        |
+| XOR       | Exclusive OR | AC = AC \^ operando (atualiza flags)        |
+| NOT       | Logical NOT  | AC = \~AC (atualiza flags)                  |
 
-### 5.4. Instruções de Deslocamento {#54-instruções-de-deslocamento}
+### 5.4. Instruções de Deslocamento 
 
-  Mnemônico   Nome                     Descrição
-  ----------- ------------------------ ---------------------------------------------------------------
-  SHL         Shift Left               Desloca AC 1 bit à esquerda (bit 0 = 0, C recebe bit 7)
-  SHR         Shift Right              Desloca AC 1 bit à direita lógico (bit 7 = 0, C recebe bit 0)
-  SRA         Shift Right Arithmetic   Desloca AC 1 bit à direita aritmético (mantém bit 7)
+| Mnemônico | Nome                    | Descrição                                                            |
+|-----------|-------------------------|----------------------------------------------------------------------|
+| SHL       | Shift Left              | Desloca AC 1 bit à esquerda (bit 0 = 0, C recebe bit 7)              |
+| SHR       | Shift Right             | Desloca AC 1 bit à direita lógico (bit 7 = 0, C recebe bit 0)        |
+| SRA       | Shift Right Arithmetic  | Desloca AC 1 bit à direita aritmético (mantém bit 7)                 |
 
-### 5.5. Instruções de Controle de Fluxo {#55-instruções-de-controle-de-fluxo}
+### 5.5. Instruções de Controle de Fluxo
 
-  Mnemônico   Nome               Descrição
-  ----------- ------------------ ----------------------------------------
-  JMP         Jump               Salta incondicionalmente para endereço
-  JZ          Jump if Zero       Salta se flag Z = 1
-  JNZ         Jump if Not Zero   Salta se flag Z = 0
-  JN          Jump if Negative   Salta se flag N = 1
-  JP          Jump if Positive   Salta se flag N = 0
-  JC          Jump if Carry      Salta se flag C = 1
-  JNC         Jump if No Carry   Salta se flag C = 0
+| Mnemônico | Nome              | Descrição                               |
+|-----------|-------------------|-----------------------------------------|
+| JMP       | Jump              | Salta incondicionalmente para endereço  |
+| JZ        | Jump if Zero      | Salta se flag Z = 1                     |
+| JNZ       | Jump if Not Zero  | Salta se flag Z = 0                     |
+| JN        | Jump if Negative  | Salta se flag N = 1                     |
+| JP        | Jump if Positive  | Salta se flag N = 0                     |
+| JC        | Jump if Carry     | Salta se flag C = 1                     |
+| JNC       | Jump if No Carry  | Salta se flag C = 0                     |
 
-### 5.6. Instruções de Sub-rotina {#56-instruções-de-sub-rotina}
+### 5.6. Instruções de Sub-rotina
 
-  Mnemônico   Nome                 Descrição
-  ----------- -------------------- ----------------------------------------------
-  JSR         Jump to Subroutine   Salva PC na pilha e salta para sub-rotina
-  RET         Return               Retorna de sub-rotina (recupera PC da pilha)
+| Mnemônico | Nome                | Descrição                                           |
+|-----------|---------------------|-----------------------------------------------------|
+| JSR       | Jump to Subroutine  | Salva PC na pilha e salta para sub-rotina           |
+| RET       | Return              | Retorna de sub-rotina (recupera PC da pilha)        |
 
-### 5.7. Instruções de Pilha {#57-instruções-de-pilha}
+### 5.7. Instruções de Pilha 
 
-  Mnemônico   Nome             Descrição
-  ----------- ---------------- --------------------------------------------------
-  PUSH        Push to Stack    Empilha AC (mem\[SP\] = AC, depois SP--)
-  POP         Pop from Stack   Desempilha para AC (SP++, depois AC = mem\[SP\])
+| Mnemônico | Nome            | Descrição                                         |
+|-----------|-----------------|---------------------------------------------------|
+| PUSH      | Push to Stack   | Empilha AC (mem[SP] = AC, depois SP--)            |
+| POP       | Pop from Stack  | Desempilha para AC (SP++, depois AC = mem[SP])    |
 
-### 5.8. Instruções de Entrada/Saída {#58-instruções-de-entradasaída}
+### 5.8. Instruções de Entrada/Saída 
 
-  Mnemônico   Nome     Descrição
-  ----------- -------- ---------------------------------------
-  IN          Input    Lê dado da porta especificada para AC
-  OUT         Output   Envia AC para porta especificada
+| Mnemônico | Nome    | Descrição                                      |
+|-----------|---------|------------------------------------------------|
+| IN        | Input   | Lê dado da porta especificada para AC          |
+| OUT       | Output  | Envia AC para porta especificada               |
 
 #### Portas de I/O Disponíveis:
 
-  Instrução   Função
-  ----------- ----------------------------------------------------------------
-  IN 0        Lê valor hexadecimal digitado pelo usuário
-  IN 1        Lê status da entrada (1 = dado disponível, 0 = sem dado)
-  OUT 0       Envia AC para display hexadecimal de saída
-  OUT 2       Limpa o banner de texto
-  OUT 3       Envia caractere ASCII para banner de texto (adiciona ao final)
+| Instrução | Função                                                         |
+|-----------|-----------------------------------------------------------------|
+| IN 0      | Lê valor hexadecimal digitado pelo usuário                     |
+| IN 1      | Lê status da entrada (1 = dado disponível, 0 = sem dado)       |
+| OUT 0     | Envia AC para display hexadecimal de saída                     |
+| OUT 2     | Limpa o banner de texto                                        |
+| OUT 3     | Envia caractere ASCII para banner de texto (adiciona ao final) |
 
-### 5.9. Instruções Especiais {#59-instruções-especiais}
+### 5.9. Instruções Especiais 
 
-  Mnemônico   Nome           Descrição
-  ----------- -------------- --------------------------------------------------
-  NOP         No Operation   Não faz nada (pode ser usado para timing)
-  HLT         Halt           Para a execução do processador
-  TRAP        Trap           Gera interrupção (não implementado nesta versão)
+| Mnemônico | Nome          | Descrição                                                    |
+|-----------|---------------|--------------------------------------------------------------|
+| NOP       | No Operation  | Não faz nada (pode ser usado para timing)                    |
+| HLT       | Halt          | Para a execução do processador                               |
+| TRAP      | Trap          | Gera interrupção (não implementado nesta versão)             |
 
-------------------------------------------------------------------------
-
-6. Modos de Endereçamento {#6-modos-de-endereçamento}
+6. Modos de Endereçamento 
 -------------------------
 
 O Sapiens suporta quatro modos de endereçamento, identificados pelos 2
 bits mais significativos do opcode:
 
-  Bits   Modo               Exemplo                                               Operação
-              Descrição
-  ------ ------------------ ----------------------------------------------------- ------------------------------------------------
-------------- ---------------------------------------------------------------------
-  00     Direto             `LDA 50`{.language-plaintext .highlighter-rouge}      `AC = mem[50]`{.language-plaintext .highlighter-
-rouge}        O operando é o endereço na memória do dado
-  01     Indireto           `LDA @50`{.language-plaintext .highlighter-rouge}     `AC = mem[mem[50]]`{.language-plaintext .highlig
-hter-rouge}   O operando aponta para endereço que contém o endereço final do dado
-  10     Imediato 8 bits    `LDA #10`{.language-plaintext .highlighter-rouge}     `AC = 10`{.language-plaintext .highlighter-rouge
-}             O operando é o byte seguinte à instrução
-  11     Imediato 16 bits   `LDS #1000`{.language-plaintext .highlighter-rouge}   `SP = 1000`{.language-plaintext .highlighter-rou
-ge}           O operando são os dois bytes seguintes à instrução
+| Bits | Modo              | Exemplo      | Operação           | Descrição                                                            |
+|------|-------------------|---------------|--------------------|-----------------------------------------------------------------------|
+| 00   | Direto            | `LDA 50`      | `AC = mem[50]`     | O operando é o endereço na memória do dado                           |
+| 01   | Indireto          | `LDA @50`     | `AC = mem[mem[50]]`| O operando aponta para endereço que contém o endereço final do dado  |
+| 10   | Imediato 8 bits   | `LDA #10`     | `AC = 10`          | O operando é o byte seguinte à instrução                             |
+| 11   | Imediato 16 bits  | `LDS #1000`   | `SP = 1000`        | O operando são os dois bytes seguintes à instrução                   |
 
 ### Observações sobre Endereçamento:
 
@@ -366,7 +357,7 @@ ge}           O operando são os dois bytes seguintes à instrução
 
 ------------------------------------------------------------------------
 
-7. Formato dos operandos {#7-formato-dos-operandos}
+7. Formato dos operandos
 ------------------------
 
 O Sapiens suporta vários tipos de formatos para os operando das
@@ -376,36 +367,30 @@ instruçõoes:
 -   Binário: 0b01010101 ou 01010101B
 -   Hexadecimal: 0x05 ou 05H (tem começar com digito)
 
-8. Diretivas do Assembler {#8-diretivas-do-assembler}
+8. Diretivas do Assembler
 -------------------------
 
 O assembler do SimuS reconhece as seguintes diretivas:
 
-  Diretiva                                                     Descrição                               Exemplo
-                               Efeito
-  ------------------------------------------------------------ --------------------------------------- ---------------------------
------------------------------- ------------------------------------
-  `ORG endereço`{.language-plaintext .highlighter-rouge}       Define o endereço inicial do programa   `ORG 0`{.language-plaintext
- .highlighter-rouge}           Programa inicia no endereço 0
-  `END`{.language-plaintext .highlighter-rouge}                Marca o fim do código fonte             `END`{.language-plaintext .
-highlighter-rouge}             Última linha do arquivo
-  `DB valor`{.language-plaintext .highlighter-rouge}           Define byte (8 bits)                    `DB #FF`{.language-plaintex
-t .highlighter-rouge}          Armazena o byte FF na memória
-  `DW valor`{.language-plaintext .highlighter-rouge}           Define word (16 bits)                   `DW #1234`{.language-plaint
-ext .highlighter-rouge}        Armazena word 1234 (little-endian)
-  `DS quantidade`{.language-plaintext .highlighter-rouge}      Define espaço (reserva bytes)           `DS 10`{.language-plaintext
- .highlighter-rouge}           Reserva 10 bytes zerados
-  `LABEL: EQU valor`{.language-plaintext .highlighter-rouge}   Define uma constante (: é opcional)     `TESTE: EQU 10`{.language-p
-laintext .highlighter-rouge}   TESTE será igual 10
+| Diretiva      | Descrição                             | Exemplo          | Efeito                                  |
+|----------------|---------------------------------------|------------------|------------------------------------------|
+| `ORG endereço` | Define o endereço inicial do programa | `ORG 0`          | Programa inicia no endereço 0            |
+| `END`          | Marca o fim do código fonte           | `END`            | Última linha do arquivo                  |
+| `DB valor`     | Define byte (8 bits)                  | `DB #FF`         | Armazena o byte FF na memória            |
+| `DW valor`     | Define word (16 bits)                 | `DW #1234`       | Armazena word 1234 (little-endian)       |
+| `DS quantidade`| Define espaço (reserva bytes)         | `DS 10`          | Reserva 10 bytes zerados                 |
+| `LABEL: EQU valor` | Define uma constante (: é opcional) | `TESTE: EQU 10` | TESTE será igual 10                      |
 
 ### Uso de Rótulos (Labels):
 
 Rótulos podem ser definidos antes de qualquer instrução ou diretiva,
 terminando com dois pontos:
 
-    LOOP:
-        LDA VALOR
-        JNZ LOOP
+```asm
+LOOP:
+    LDA VALOR
+    JNZ LOOP
+```
 
 -   Rótulos devem começar com letra e podem conter letras, números e
     underscore
@@ -415,13 +400,13 @@ terminando com dois pontos:
 
 ------------------------------------------------------------------------
 
-9. Exemplos de Programas {#9-exemplos-de-programas}
+9. Exemplos de Programas
 ------------------------
 
-### 9.1. Eco Simples {#91-eco-simples}
+### 9.1. Eco Simples 
 
 Programa que aguarda entrada do usuário e ecoa o valor:
-
+```asm
     ; Programa de Eco
     ORG 0
     LOOP:
@@ -431,11 +416,12 @@ Programa que aguarda entrada do usuário e ecoa o valor:
         OUT 0         ; Exibe valor
         HLT
     END
+```
 
-### 9.2. Contador de 0 a 9 {#92-contador-de-0-a-9}
+### 9.2. Contador de 0 a 9 
 
 Conta de 0 a 9 e para:
-
+```asm
     ; Contador
     ORG 0
         LDA #0        ; Inicia em 0
@@ -446,11 +432,11 @@ Conta de 0 a 9 e para:
         JNZ LOOP      ; Continua se != 10
         HLT
     END
-
-### 9.3. Sub-rotina com Pilha {#93-sub-rotina-com-pilha}
+```
+### 9.3. Sub-rotina com Pilha
 
 Demonstra uso de JSR, RET e PUSH/POP:
-
+```asm
     ; Sub-rotina
     ORG 0
         LDA #42
@@ -465,10 +451,10 @@ Demonstra uso de JSR, RET e PUSH/POP:
         POP           ; Restaura AC (42)
         RET
     END
-
+```
 ------------------------------------------------------------------------
 
-10. Resolução de Problemas Comuns {#10-resolução-de-problemas-comuns}
+10. Resolução de Problemas Comuns
 ---------------------------------
 
 ### Erro: "Instrução Inválida"
@@ -504,7 +490,7 @@ Demonstra uso de JSR, RET e PUSH/POP:
 
 ------------------------------------------------------------------------
 
-11. Dicas e Boas Práticas {#11-dicas-e-boas-práticas}
+11. Dicas e Boas Práticas
 -------------------------
 
 -   **Use comentários generosamente:** Documente o propósito de cada
@@ -528,7 +514,7 @@ Demonstra uso de JSR, RET e PUSH/POP:
 
 ------------------------------------------------------------------------
 
-12. Conclusão {#12-conclusão}
+12. Conclusão
 -------------
 
 O SimuS é uma ferramenta completa para aprendizado de arquitetura de
@@ -548,9 +534,5 @@ adicionais ou suporte técnico, consulte a documentação do processador
 Sapiens ou entre em contato com o desenvolvedor.
 
 **Bons estudos e boa programação!**
-:::
-:::
 
-::: {#footer_wrap .outer}
-Published with [GitHub Pages](https://pages.github.com)
-:::
+
