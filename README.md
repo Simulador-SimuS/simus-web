@@ -30,29 +30,29 @@ A interface do SimuS está dividida em três painéis principais, cada um
 com funções específicas para facilitar o desenvolvimento e depuração de
 programas.
 
-### 2.1. Painel Esquerdo - Editor e Execução 
+### 2.1. Painel Esquerdo - Editor, Compilação e Execução 
 
 Este painel contém três abas que permitem editar código, visualizar
 erros e acompanhar a execução:
 
 #### 2.1.1. Aba Editor
 
-Área de edição de código assembly com as seguintes características:
+Área de edição de código em linguagem de montagem com as seguintes características:
 
--   Editor de texto com syntax highlighting para código assembly
--   Fundo escuro para reduzir fadiga visual durante programação
--   Fonte monoespaçada (Consolas) para melhor alinhamento do código
--   Suporte a comentários (linhas iniciadas com ponto e vírgula ;)
+-   Editor de texto com destaque de sintaxe para código em linguagem de montagem;
+-   Fundo escuro para reduzir fadiga visual durante programação;
+-   Fonte monoespaçada (Consolas) para melhor alinhamento do código;
+-   Suporte a comentários (linhas iniciadas com ponto e vírgula (;).
 
 #### 2.1.2. Aba Erros
 
 Exibe mensagens de erro geradas durante a compilação:
 
--   Lista todos os erros encontrados no código fonte
--   Cada erro mostra a linha e uma descrição do problema
+-   Lista todos os erros encontrados no código fonte;
+-   Cada erro mostra a linha e uma descrição do problema;
 -   Clique em um erro para posicionar o cursor na linha correspondente
-    no editor
--   Badge vermelho no título da aba indica o número de erros encontrados
+    no editor;
+-   Badge vermelho no título da aba indica o número de erros encontrados.
 
 #### 2.1.3. Aba Execução
 
