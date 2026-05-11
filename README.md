@@ -192,16 +192,16 @@ Localizada no topo do painel esquerdo, oferece três botões para
 gerenciamento de arquivos:
 
 -   **📂 Abrir:** Abre um arquivo assembly do disco (.txt, .asm, .sap). O
-    conteúdo é carregado no editor, substituindo o código atual. O nome
+    conteúdo é carregado na aba de edição, substituindo o código atual. O nome
     do arquivo é exibido na aba do Editor.
--   **💾 Salvar Como...:** Salva o código atual do editor em um arquivo
+-   **💾 Salvar Como...:** Salva o código atual da aba de edição em um arquivo
     no disco. Abre diálogo do navegador para escolher o nome e local.
     Extensão padrão: .asm.
--   **✔ Compilar:** Compila o código assembly no editor. Se houver
+-   **✔ Compilar:** Compila o código assembly na aba de edição. Se houver
     erros, a aba Erros é ativada automaticamente com a lista de
     problemas. Se a compilação for bem-sucedida, o código compilado é
-    carregado na memória e a aba Execução é exibida. O PC é posicionado
-    no endereço definido pela diretiva ORG.
+    carregado na memória no formao binário e a aba Execução é exibida.
+    O PC é posicionado no endereço definido pela diretiva ORG.
 
 ------------------------------------------------------------------------
 
