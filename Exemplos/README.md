@@ -2,7 +2,7 @@
 
 
 | Arquivo  | Uso validado / restrições |
-|---|---|---|
+|---|--|
 | banner_escreve_cadeia.asm  | Banner e terminal: Gabriel P. Silva. |
 | console_imprime_alfabeto.asm  | Digite A no terminal: imprime A–Z com CR/LF. |
 | console_le_e_ecoa.asm | Digite A: imprime 26 caracteres (A–Z); apesar do nome, não faz somente eco. |
