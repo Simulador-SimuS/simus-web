@@ -1,4 +1,4 @@
-# SimuS
+# SimuS-Web
 ## Simulador do Processador Sapiens
 ### Manual de Utilização
 
