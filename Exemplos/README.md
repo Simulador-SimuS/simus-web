@@ -21,6 +21,5 @@
 | soma_console.asm | C=7; terminal: A soma deu certo! |
 | soma_vetor.asm | Soma do vetor fornecido: 45 decimal (2D hexadecimal). |
 | soma_vetor_dec.asm | Soma 45 exibida em BCD como 45 no visor hexadecimal. Validado para o vetor fornecido, sem alteração de tamanho/endereço. |
-|---|---|
 ----
 
