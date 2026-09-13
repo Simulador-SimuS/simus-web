@@ -1,4 +1,7 @@
-ORG 100
+; Conta pares e impares; mostra ambos no banner.
+; ROTINA consome o argumento de 16 bits e preserva a pilha.
+; Recarregue o programa antes de repetir a contagem.
+ORG 0x200
 
 ; Declaração das variáveis do programa principal
 TAM_VETOR:   	DB	10  
@@ -12,10 +15,17 @@ STR_PARES:   	STR 	"Pares:"
 STR_IMPARES: 	STR 	" Impares:"
              	DB 	0
 
+PT_PARES:   DW STR_PARES
+PT_IMPARES: DW STR_IMPARES
+
 ORG 0
+        OUT CLEARB
 
 ; Faz a leitura de um elemento do vetor e incrementa o contador
-INICIO:  
+INICIO:
+        LDA     CONT
+        SUB     TAM_VETOR
+        JZ      FIM
 	LDA  	CONT
         ADD  	#1
         STA  	CONT
@@ -43,41 +53,42 @@ TESTE:
         LDA     END_VETOR
         ADD     #1
         STA     END_VETOR
+        LDA     END_VETOR+1
+        ADC     #0
+        STA     END_VETOR+1
         LDA     TAM_VETOR
         SUB     CONT           
-        JP      INICIO
+        JNZ     INICIO
 
 ; Coloca o endereço da string na pilha e chama a rotina de impressão
-FIM:    LDA     #00  
+FIM:    LDA     PT_PARES+1  
         PUSH
-        LDA     #STR_PARES
+        LDA     PT_PARES
         PUSH
         JSR     ROTINA
 
-; Macete para imprimir o número em decimal (0-9)
-        LDA     PARES 
-        ADD     #30H
-        OUT     BANNER
+; Imprime o contador em decimal (0-255)
+        LDA     PARES
+        JSR     DECIMAL
 
 ; Coloca o endereço da string na pilha e chama a rotina de impressão
-        LDA     #00  
+        LDA     PT_IMPARES+1
         PUSH
-        LDA     #STR_IMPARES
+        LDA     PT_IMPARES
         PUSH
         JSR     ROTINA
 
-; Macete para imprimir o número em decimal (0-9)
-        LDA     IMPARES 
-        ADD     #30H
-        OUT     BANNER
+; Imprime o contador em decimal (0-255)
+        LDA     IMPARES
+        JSR     DECIMAL
         HLT
 END     0        
 ;------------------------------------------------------
 ; Rotina para impressão de uma string no banner
 ; Declaração das variáveis da rotina
 
-ORG  200
-SP:    	DW   	0    	; Guarda o valor do stack pointer
+ORG 1000
+RA:     DW 0      ; Endereco de retorno, nao o valor de SP
 PTR:  	DW     	0	; Ponteiro com o endereço da string a ser impressa
 
 
@@ -87,24 +98,76 @@ BANNER  EQU 2
 ;------------------------------------------------------
 
 ROTINA:
-    	STS     SP  	; Salva ovalor atual do sp
-    	POP
-    	POP          	; Descarta as primeiras duas posiçoes da pilha
-    	POP            	; Tira a parte baixa do endereco da string
-        STA 	PTR    	; Salva na parte baixa do ponteiro
-    	POP
-    	STA     PTR+1   ; Salva na parte alta do ponteiro
-    	OUT 	CLEARB  ; Limpa o Banner
+        POP                 ; Retira e salva o retorno de JSR
+        STA     RA
+        POP
+        STA     RA+1
+        POP                 ; Consome os dois bytes do argumento
+        STA     PTR
+        POP
+        STA     PTR+1
 LOOP:
-    	LDA 	@PTR	; Le o caractere
-    	OR 	#0      ; É NULL?
-    	JZ  	RETORNA	; Se for retorna
-    	OUT 	BANNER  ; Imprime o caractere no banner
-    	LDA	PTR	; Incrementa o ponteiro
-    	ADD 	#1
-    	STA 	PTR
-    	JMP	LOOP	; Volta para o inicio
-
+        LDA     @PTR
+        OR      #0
+        JZ      RETORNA
+        OUT     BANNER
+        LDA     PTR
+        ADD     #1
+        STA     PTR
+        LDA     PTR+1
+        ADC     #0
+        STA     PTR+1
+        JMP     LOOP
 RETORNA:
-    	LDS SP		; Restaura o Stack Pointer
-    	RET		; Retorna
+        LDA     RA+1        ; Reempilha somente o retorno
+        PUSH
+        LDA     RA
+        PUSH
+        RET                 ; SP volta ao valor anterior aos argumentos
+
+; Imprime AC (0-255) em decimal, sem zeros a esquerda.
+; JSR/RET balanceados; nao recebe argumentos pela pilha.
+DECIMAL:
+        STA     NUMERO
+        LDA     #0
+        STA     CENTENAS
+        STA     DEZENAS
+CENTENA:
+        LDA     NUMERO
+        SUB     #100
+        JC      DEZENA
+        STA     NUMERO
+        LDA     CENTENAS
+        ADD     #1
+        STA     CENTENAS
+        JMP     CENTENA
+DEZENA:
+        LDA     NUMERO
+        SUB     #10
+        JC      MOSTRA_NUMERO
+        STA     NUMERO
+        LDA     DEZENAS
+        ADD     #1
+        STA     DEZENAS
+        JMP     DEZENA
+MOSTRA_NUMERO:
+        LDA     CENTENAS
+        JZ      TESTA_DEZENA
+        ADD     #48
+        OUT     BANNER
+        JMP     MOSTRA_DEZENA
+TESTA_DEZENA:
+        LDA     DEZENAS
+        JZ      UNIDADE
+MOSTRA_DEZENA:
+        LDA     DEZENAS
+        ADD     #48
+        OUT     BANNER
+UNIDADE:
+        LDA     NUMERO
+        ADD     #48
+        OUT     BANNER
+        RET
+NUMERO:    DB 0
+CENTENAS:  DB 0
+DEZENAS:   DB 0
