@@ -21,5 +21,8 @@
 | soma_console.asm | C=7; terminal: A soma deu certo! |
 | soma_vetor.asm | Soma do vetor fornecido: 45 decimal (2D hexadecimal). |
 | soma_vetor_dec.asm | Soma 45 exibida em BCD como 45 no visor hexadecimal. Validado para o vetor fornecido, sem alteração de tamanho/endereço. |
+| video_circulos_concentricos.asm | Desenha oito contornos com o mesmo centro (64,32), raios 3,7,11,15,19,23,27,31 e cores alternadas com fundo azul escuro. | 
+| video_paleta_cores.asm | Preenche toda a tela com uma grade de 16 × 16 blocos. Cada bloco mede 8 × 4 pixels; a cor começa em 0 e avança até 255. |
+| video_teste_manual.asm | Desenha retângulo vermelho, reta verde e círculo amarelo sobre fundo azul. | 
 ----
 
