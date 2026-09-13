@@ -1,7 +1,5 @@
 # Exemplos para SimuS-Web
 
-Catálogo dos 38 programas de `ExemplosOk`, preparados para `simus-v0981-video.html`.
-
 Nos exemplos com entrada pelo painel, confirme cada valor com **Enter** e observe a base selecionada. Para os exemplos gráficos, abra a janela **Video**. Recarregue o programa antes de uma nova execução para restaurar seus dados iniciais.
 
 | Programa | Descrição |
